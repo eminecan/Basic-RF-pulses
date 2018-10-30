@@ -36,7 +36,7 @@ x = linspace(-N, N, res_rf); % array of time points
 % x = t/t0 
 
 rf = (1-a+a*cos(pi*x/N)).*sinc(x); 
-%rf = A*t_0*((1-alpha)+alpha*cos((pi*t)/(N*t0)))*sin((pi*t)/t0)
+% rf = A*t_0*((1-alpha)+alpha*cos((pi*t)/(N*t0)))*sin((pi*t)/t0)
 % the result of this sinc pulse B1(t) function is independent of actual
 % pulsewidth but number of zero crossings and sampling.
 %   = A*((1-alpha)+alpha*cos((pi*t)/(N*t0)))*sinc(t/t_0)
@@ -52,7 +52,7 @@ xlabel('time (number of samples)');
 ylabel('normalized amplitude');
 
 % VERIFY THE AREA IS EQUAL TO 1
-%vpa(trapz(k,rf)) %or 
+% vpa(trapz(k,rf)) %or 
 area_rf = sum(rf) %  sum of the RF waveform is the flip angle in radians
 
 end
