@@ -38,3 +38,23 @@ plot(rfpi,'LineWidth', 2)
 
 legend('area = 1','area = pi/2')
 ____________________________________________________________________________________________
+![Screenshot](https://github.com/eminecan/Basic-RF-pulses/blob/master/sinc-gauss.png)
+
+rfs = rfscaleg(rfpi,6.4);
+
+MAX_RFS = vpa(max(rfs))
+
+area_rfs = vpa(sum(rfs))
+
+dt = 6.4/256;
+
+t = (1:length(rfs))*dt;  % in msec
+
+plot(t, rfs, 'LineWidth', 2); grid on;  
+
+xlabel('Time (msec)'); ylabel('B_1 (Gauss)');
+
+title('Windowed Sinc RF Pulse')
+
+legend('scaled to Gauss')
+
